@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Pate Fermentee",
+    "ingredients": {
+      "bread flour": 1,
+      "salt": 0.019,
+      "yeast": 0.0055,
+      "water": 0.65
+    }
+  },
+  {
+    "name": "Poolish",
+    "ingredients": {
+      "bread flour": 1,
+      "water": 1.07,
+      "yeast": 0.0027
+    }
+  },
+  {
+    "name": "Biga",
+    "ingredients": {
+      "bread flour": 1,
+      "yeast": 0.0049,
+      "water": 0.667
+    }
+  },
+  {
+    "name": "Anadama Bread",
+    "ingredients": {
+      "cornmeal": 0.691,
+      "water": 1.314,
+      "bread flour": 1,
+      "salt": 0.019,
+      "molasses": 0.198,
+      "shortening": 0.049
+    }
+  },
+  {
+    "name": "Artos: Greek Celebration Bread",
+    "ingredients": {
+      "barm": 0.438,
+      "bread flour": 1,
+      "salt": 0.016,
+      "yeast": 0.011,
+      "spices": 0.013,
+      "citrus": 0.02,
+      "eggs": 0.206,
+      "honey": 0.167,
+      "olive oil": 0.125,
+      "milk": 0.375
+    }
+  },
+  {
+    "name": "Bagel",
+    "ingredients": {
+      "yeast": 0.0031,
+      "high gluten flour": 1,
+      "water": 0.571,
+      "salt": 0.02,
+      "malt powder": 0.0094
+    }
+  }
+]
