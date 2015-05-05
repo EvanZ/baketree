@@ -25,7 +25,7 @@
     }
   },
   {
-    "name": "Anadama Bread",
+    "name": "Anadama",
     "ingredients": {
       "cornmeal": 0.691,
       "water": 1.314,
@@ -36,7 +36,7 @@
     }
   },
   {
-    "name": "Artos: Greek Celebration Bread",
+    "name": "Artos: Greek Celebration",
     "ingredients": {
       "barm": 0.438,
       "bread flour": 1,
@@ -46,7 +46,7 @@
       "citrus": 0.02,
       "eggs": 0.206,
       "honey": 0.167,
-      "olive oil": 0.125,
+      "oil": 0.125,
       "milk": 0.375
     }
   },
@@ -58,6 +58,159 @@
       "water": 0.571,
       "salt": 0.02,
       "malt powder": 0.0094
+    }
+  },
+  {
+    "name": "Brioche",
+    "ingredients": {
+      "bread flour": 1,
+      "yeast": 0.018,
+      "milk": 0.219,
+      "eggs": 0.452,
+      "sugar": 0.068,
+      "salt": 0.021,
+      "butter": 0.877
+    }
+  },
+  {
+    "name": "Challah",
+    "ingredients": {
+      "bread flour": 1,
+      "sugar": 0.055,
+      "salt": 0.014,
+      "yeast": 0.0085,
+      "oil": 0.055,
+      "eggs": 0.18,
+      "egg yolks": 0.07,
+      "water": 0.45
+    }
+  },
+  {
+    "name": "Ciabatta",
+    "ingredients": {
+      "bread flour": 1,
+      "salt": 0.033,
+      "yeast": 0.013,
+      "water": 0.333
+    }
+  },
+  {
+    "name": "Sticky Buns",
+    "ingredients": {
+      "sugar": 0.203,
+      "salt": 0.016,
+      "shortening": 0.172,
+      "eggs": 0.103,
+      "lemon extract": 0.011,
+      "bread flour": 1,
+      "yeast": 0.014,
+      "milk": 0.594
+    }
+  },
+  {
+    "name": "Cinnamon Raisin Walnut",
+    "ingredients": {
+      "bread flour": 1,
+      "sugar": 0.041,
+      "salt": 0.019,
+      "yeast": 0.014,
+      "cinnamon": 0.01,
+      "eggs": 0.103,
+      "shortening": 0.063,
+      "buttermilk": 0.25,
+      "water": 0.375,
+      "raisins": 0.563,
+      "walnuts": 0.25
+    }
+  },
+  {
+    "name": "Corn",
+    "ingredients": {
+      "cornmeal": 0.429,
+      "buttermilk": 1.14,
+      "bacon": 0.511,
+      "all-purpose flour": 0.511,
+      "baking powder": 0.054,
+      "baking soda": 0.0036,
+      "salt": 0.018,
+      "sugar": 0.143,
+      "brown sugar": 0.143,
+      "eggs": 0.357,
+      "honey": 0.107,
+      "butter": 0.071,
+      "corn": 1.14,
+      "bacon fat": 0.071
+    }
+  },
+  {
+    "name": "Cranberry Walnut Celebration",
+    "ingredients": {
+      "bread flour": 1,
+      "sugar": 0.111,
+      "salt": 0.014,
+      "yeast": 0.029,
+      "citrus extract": 0.056,
+      "eggs": 0.244,
+      "buttermilk": 0.296,
+      "butter": 0.074,
+      "water": 0.222,
+      "dried cranberries": 0.667,
+      "walnuts": 0.222
+    }
+  },
+  {
+    "name": "English Muffins",
+    "ingredients": {
+      "bread flour": 1,
+      "sugar": 0.025,
+      "salt": 0.019,
+      "yeast": 0.014,
+      "shortening": 0.05,
+      "milk": 0.70
+    }
+  },
+  {
+    "name": "Focaccia",
+    "ingredients": {
+      "high gluten flour": 1,
+      "salt": 0.022,
+      "yeast": 0.0098,
+      "olive oil": 0.133,
+      "water": 0.711
+    }
+  },
+  {
+    "name": "French",
+    "ingredients": {
+      "all purpose flour": 0.5,
+      "bread flour": 0.5,
+      "salt": 0.019,
+      "yeast": 0.0055,
+      "water": 0.65
+    }
+  },
+  {
+    "name": "Italian",
+    "ingredients": {
+      "bread flour": 1,
+      "salt": 0.036,
+      "sugar": 0.044,
+      "yeast": 0.0098,
+      "malt powder": 0.0015,
+      "oil": 0.044,
+      "water": 0.578
+    }
+  },
+  {
+    "name": "Kaiser Roll",
+    "ingredients": {
+      "bread flour": 1,
+      "salt": 0.02,
+      "malt powder": 0.017,
+      "yeast": 0.011,
+      "eggs": 0.165,
+      "oil": 0.075,
+      "water": 0.55
     }
   }
 ]
