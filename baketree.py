@@ -3,15 +3,24 @@ __author__ = 'evanzamir'
 import json
 import matplotlib.pyplot as plt
 
-from sklearn import tree
 from sklearn.feature_extraction import DictVectorizer
-from sklearn.externals.six import StringIO
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import SpectralClustering, AgglomerativeClustering
 from sklearn.decomposition import PCA
-import pydot
+from sklearn.pipeline import Pipeline, TransformerMixin, BaseEstimator
+
 
 ingredients = []
 items = []
+
+
+class AgglomerativeWrapper(BaseEstimator, TransformerMixin):
+  def __init__(self, model):
+    self.model = model
+
+  def fit(self, x, y=None):
+    self.labels_ = self.model.fit_predict(x)
+    return self
+
 
 with open('recipes.json') as f:
   recipes = json.load(f)
@@ -21,32 +30,24 @@ with open('recipes.json') as f:
 
 
 def main():
-  v = DictVectorizer(sparse=False)
-  X = v.fit_transform(ingredients)
-  features = [str(x) for x in v.get_feature_names()]
-  print(features)
-  clf = tree.DecisionTreeClassifier(criterion='gini')
-  model = clf.fit(X, items)
-  ward = AgglomerativeClustering(n_clusters=6, linkage='ward').fit(X)
-  pca = PCA(n_components=2)
-  X_pca = pca.fit_transform(X)
-  plt.figure()
-  # fig = plt.figure()
-  print(ward.labels_)
+  pca = Pipeline([
+    ('vect', DictVectorizer(sparse=False)),
+    ('pca', PCA(n_components=2))
+  ])
+  X_pca = pca.fit_transform(ingredients)
+  labels = Pipeline([
+    ('vect', DictVectorizer(sparse=False)),
+    ('agglom', AgglomerativeWrapper(AgglomerativeClustering(n_clusters=6, linkage='ward')))
+  ])
 
-  print(X)
-  print(items)
-  print(clf)
-  with open('bake.dot', 'w') as f:
-    dot_data = StringIO()
-    tree.export_graphviz(model, out_file=dot_data, feature_names=features)
-  graph = pydot.graph_from_dot_data(dot_data.getvalue())
-  graph.write_pdf('bake.pdf')
-  print(clf.classes_)
+  labels.fit(ingredients)
+  clusters = labels.named_steps['agglom'].labels_
+  print(clusters)
+  plt.figure()
   for row, item in enumerate(items):
-    plt.scatter(X_pca[row, 0], X_pca[row, 1], s=100, c='rgbykc'[ward.labels_[row]])
-    plt.annotate("{}:{}".format(item, ward.labels_[row]),
-                 xy=(X_pca[row, 0], X_pca[row, 1]))
+      plt.scatter(X_pca[row, 0], X_pca[row, 1], s=100, c='rgbykc'[clusters[row]])
+      plt.annotate("{}:{}".format(item, clusters[row]),
+                   xy=(X_pca[row, 0], X_pca[row, 1]))
   plt.show()
 
 
