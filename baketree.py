@@ -36,6 +36,7 @@ def main():
   X_pca = pca.fit_transform(ingredients)
   labels = Pipeline([
     ('vect', DictVectorizer(sparse=False)),
+    ('pca', PCA(n_components=2)),
     ('agglom', AgglomerativeWrapper(AgglomerativeClustering(n_clusters=6, linkage='ward')))
   ])
 
