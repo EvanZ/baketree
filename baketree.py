@@ -22,14 +22,13 @@ class AgglomerativeWrapper(BaseEstimator, TransformerMixin):
     return self
 
 
-with open('recipes.json') as f:
-  recipes = json.load(f)
-  for recipe in recipes:
-    ingredients.append(recipe['ingredients'])
-    items.append(recipe['name'])
-
-
 def main():
+  with open('recipes.json') as f:
+    recipes = json.load(f)
+    for recipe in recipes:
+      ingredients.append(recipe['ingredients'])
+      items.append(recipe['name'])
+
   pca = Pipeline([
     ('vect', DictVectorizer(sparse=False)),
     ('pca', PCA(n_components=2))
@@ -45,9 +44,14 @@ def main():
   print(clusters)
   plt.figure()
   for row, item in enumerate(items):
-      plt.scatter(X_pca[row, 0], X_pca[row, 1], s=100, c='rgbykc'[clusters[row]])
-      plt.annotate("{}:{}".format(item, clusters[row]),
-                   xy=(X_pca[row, 0], X_pca[row, 1]))
+    plt.scatter(X_pca[row, 0], X_pca[row, 1], s=100, c='rgbcyk'[clusters[row]])
+    plt.annotate("{}".format(item),
+                 xy=(X_pca[row, 0], X_pca[row, 1]),
+                 textcoords='offset points',
+                 xytext=(10,10),
+                 size=10,
+                 arrowprops=dict(arrowstyle="->",
+                                 facecolor='white'))
   plt.show()
 
 
